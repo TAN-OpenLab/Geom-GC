@@ -1,5 +1,4 @@
 # Geom-GC
-Fast Garbled Circuits: Geometry-based Gates
 
 This project implements Geom-GC based on geometry transform.
 
