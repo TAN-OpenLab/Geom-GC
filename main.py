@@ -168,7 +168,6 @@ class Bob:
         # Generate all possible inputs for both Alice and Bob
         for bits in [format(n, 'b').zfill(N) for n in range(2**N)]:
             bits_b = [int(b) for b in bits[N - len(b_wires):]]  # Bob's inputs
-            print ("bits,bits_b",bits,bits_b)   #bits,bits_b 0000 [0, 0]
 
             # Create dict mapping each wire of Bob to Bob's input
             b_inputs_clear = {
