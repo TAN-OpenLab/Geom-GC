@@ -134,7 +134,6 @@ class Bob:
             (True by default).
     """
     def __init__(self, oblivious_transfer=True):
-        #print ("Bob")
         self.socket = util.EvaluatorSocket()
         self.ot = ot.ObliviousTransfer(self.socket, enabled=oblivious_transfer)
     def listen(self):
@@ -160,8 +159,6 @@ class Bob:
         """
         circuit = entry["circuit"]
         garbled_tables = entry["garbled_tables"]
-        #c= geom.Point(garbled_tables[5])
-        #print ("bob garbled_tables[5].x",type(garbled_tables[5]),garbled_tables.items(),garbled_tables[5].x)
         a_wires = circuit.get("alice", [])  # list of Alice's wires
         b_wires = circuit.get("bob", [])  # list of Bob's wires
         N = len(a_wires) + len(b_wires)
@@ -178,15 +175,12 @@ class Bob:
                 b_wires[i]: bits_b[i]
                 for i in range(len(b_wires))
             }
-            print ("b_inputs_clear",b_inputs_clear)
-
             # Evaluate and send result to Alice
             self.ot.send_result(circuit, garbled_tables,
                                 b_inputs_clear)
 
 
 class LocalTest(Generator):
-    '''测试用，不涉及传输'''
     """A class for local tests.
 
     Print a circuit evaluation or garbled tables.
