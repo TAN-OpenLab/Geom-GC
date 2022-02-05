@@ -131,7 +131,6 @@ class GarbledGate:
             w_i_0, w_i_1,x_0, y_0 = geom.ORgate(w_a_0,w_a_1,w_b_0, w_b_1)
             c0=geom.Point(x_0, y_0)
             self.garbled_table = c0
-            print (type(c0))
             self.garbled_values[out]=(w_i_0,w_i_1)
             
         elif (self.gate_type=="NOR"):
