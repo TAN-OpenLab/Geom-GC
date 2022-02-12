@@ -283,7 +283,6 @@ def main(
 
     if party == "alice":
         alice = Alice(circuit_path, oblivious_transfer=oblivious_transfer)
-        print ("circuit_path, oblivious_transfer", circuit_path, oblivious_transfer)
         alice.start()
     elif party == "bob":
         bob = Bob(oblivious_transfer=oblivious_transfer)
